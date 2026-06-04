@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,455..900;1,455..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Poppins", "Playfair Display", system-ui, sans-serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-red-655: #E31B23;
+  --color-red-650: #bf141b;
+}
+
+/* Custom Broad-sheet Animation and Layout helpers */
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Aged Broad-Sheet aesthetic overlays */
+.newsprint-aged {
+  background-color: #fffdf9 !important;
+  color: #1c1917 !important;
+}
+
+.newsprint-noir {
+  background-color: #efede7 !important;
+  color: #18191a !important;
+  filter: grayscale(1) contrast(1.15) !important;
+}
+
+.newsprint-golden {
+  background-color: #faf2dc !important;
+  color: #1a150e !important;
+  filter: sepia(0.18) contrast(1.05) !important;
+}
+
+/* Coffee stain SVG overlay styling */
+.coffee-stain-container {
+  pointer-events: none;
+  opacity: 0.14;
+}
+
+/* Broadsheet physical folding lines styling */
+.fold-vertical {
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.06) 49%, rgba(255,255,255,0.08) 50%, rgba(0,0,0,0.08) 51%, transparent);
+  pointer-events: none;
+}
+
+.fold-horizontal {
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.07) 49%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.09) 51%, transparent);
+  pointer-events: none;
+}
+
+/* Half-tone dots print matrix simulator for old newspapers */
+.halftone-print-overlay {
+  background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+}
+
+/* Print simulation ink blur offsets (misaligned plates simulation) */
+.ink-plate-offset h1, 
+.ink-plate-offset h2,
+.ink-plate-offset h3,
+.ink-plate-offset h4,
+.ink-plate-offset p {
+  text-shadow: 0.25px 0px 0.25px rgba(220, 38, 38, 0.4), -0.25px 0px 0.25px rgba(6, 182, 212, 0.4);
+}
+
+/* Custom styled multi-columns gaps */
+.col-gap-8 {
+  column-gap: 2rem;
+}
+
+/* Selection aesthetics */
+::selection {
+  background-color: rgba(185, 28, 28, 0.3);
+  color: inherit;
+}
