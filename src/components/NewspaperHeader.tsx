@@ -41,7 +41,8 @@ export default function NewspaperHeader({
     { id: 'sports', label: 'Sports' },
     { id: 'education', label: 'Education' },
     { id: 'entertainment', label: 'Entertainment' },
-    { id: 'contact', label: 'Contact Us' }
+    { id: 'contact', label: 'Contact Us' },
+    { id: 'submit-news', label: 'Submit News' }
   ];
 
   return (
@@ -53,18 +54,12 @@ export default function NewspaperHeader({
           onClick={() => setCurrentTab('home')} 
           className="cursor-pointer select-none space-y-3 group"
         >
-          {/* Punch Style Logo plates */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 select-none">
-            {/* Iconic Solid Red THE RoadMap plate */}
-            <div className="bg-[#E31B23] text-white font-sans font-black text-3xl sm:text-4xl md:text-5xl px-5 py-2.5 tracking-tightest leading-none shadow-md hover:scale-102 duration-250 transition-transform">
-              THE RoadMap
+          {/* Elegant Logo Plate */}
+          <div className="flex items-center justify-center select-none">
+            {/* Iconic Solid Red plate */}
+            <div className="bg-[#E31B23] text-white font-sans font-black text-3xl sm:text-4xl md:text-5xl px-6 py-3 tracking-tighter leading-none shadow-md hover:scale-102 duration-250 transition-transform rounded-xs">
+              TheRoadMapNews
             </div>
-            
-            <span className="hidden sm:inline font-mono text-stone-300 font-bold text-3xl">|</span>
-            
-            <h2 className={`font-sans font-black tracking-tight text-3xl sm:text-4xl md:text-5xl ${isCyber ? 'text-white' : 'text-stone-950'} flex flex-col items-start leading-none`}>
-              <span style={{ color: isCyber ? 'white' : '#1c1917' }}>NEWS</span>
-            </h2>
           </div>
         </div>
       </div>

@@ -613,6 +613,21 @@ export default function DashboardSection({
                           </td>
                           <td className="p-3.5 text-right pr-4 whitespace-nowrap">
                             <div className="flex justify-end gap-2.5">
+                              {art.isDraft && (
+                                <button
+                                  onClick={() => {
+                                    const updated = articles.map(item => 
+                                      item.id === art.id ? { ...item, isDraft: false } : item
+                                    );
+                                    onUpdateArticles(updated);
+                                    addAlert(`Article Approved & Published successfully!`);
+                                  }}
+                                  className="text-emerald-500 hover:text-emerald-400 p-1 rounded hover:bg-stone-850 cursor-pointer transition flex items-center justify-center mr-1"
+                                  title="Approve & Publish Story"
+                                >
+                                  <Check className="w-3.5 h-3.5" />
+                                </button>
+                              )}
                               <button
                                 onClick={() => startEditNews(art)}
                                 className="text-stone-400 hover:text-white p-1 rounded hover:bg-stone-800 cursor-pointer transition"
@@ -725,14 +740,38 @@ export default function DashboardSection({
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="block text-[10.5px] font-mono font-bold text-stone-500 uppercase">Photo Image URL</label>
-                  <input
-                    type="text"
-                    value={formData.image}
-                    onChange={(e) => setFormData({...formData, image: e.target.value})}
-                    placeholder="Direct Unsplash or image CDN link..."
-                    className="w-full bg-stone-950 border border-stone-800 focus:ring-1 focus:ring-red-500 rounded-xl py-2 px-3 text-xs focus:outline-none"
-                  />
+                  <label className="block text-[10.5px] font-mono font-bold text-stone-500 uppercase">Photo Image URL / Local Upload</label>
+                  <div className="space-y-2">
+                    <input
+                      type="text"
+                      value={formData.image}
+                      onChange={(e) => setFormData({...formData, image: e.target.value})}
+                      placeholder="Direct Unsplash or image CDN link..."
+                      className="w-full bg-stone-950 border border-stone-800 focus:ring-1 focus:ring-red-500 rounded-xl py-2 px-3 text-xs focus:outline-none placeholder:text-stone-600 text-stone-200"
+                    />
+                    <div className="relative border border-dashed border-stone-800 hover:border-red-500/50 transition rounded-xl p-2.5 bg-stone-950/40 flex flex-col items-center justify-center cursor-pointer text-center group">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) {
+                            const reader = new FileReader();
+                            reader.onloadend = () => {
+                              setFormData(prev => ({ ...prev, image: reader.result as string }));
+                              addAlert("Uploaded image attached successfully!", "success");
+                            };
+                            reader.readAsDataURL(file);
+                          }
+                        }}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      />
+                      <div className="flex items-center gap-1.5 text-stone-500 group-hover:text-red-500 transition-colors duration-150">
+                        <UploadCloud className="w-4 h-4 shrink-0" />
+                        <span className="text-[10px] font-mono font-bold">Upload Local Image</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="space-y-1.5">

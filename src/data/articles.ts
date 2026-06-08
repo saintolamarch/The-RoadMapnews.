@@ -143,5 +143,5 @@ export const BARCODES_DATA = {
   issueNo: 'Vol. 42 / No. 147',
   price: '₦400 / $1.00',
   isbn: '978-019-9535',
-  printedBy: 'Chronicle Press Ltd, Lagos'
+  printedBy: 'RoadMap News Press Ltd, Lagos'
 };

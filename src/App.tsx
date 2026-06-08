@@ -25,6 +25,7 @@ import EducationSection from './components/EducationSection';
 import EntertainmentSection from './components/EntertainmentSection';
 import ContactSection from './components/ContactSection';
 import DashboardSection from './components/DashboardSection';
+import SubmitNewsSection from './components/SubmitNewsSection';
 
 
 export default function App() {
@@ -342,6 +343,17 @@ export default function App() {
               <ContactSection />
             )}
 
+            {currentTab === 'submit-news' && (
+              <SubmitNewsSection 
+                articles={articles}
+                onAddSubmittedArticle={(newArticle) => {
+                  handleUpdateArticles([newArticle, ...articles]);
+                }}
+                isLoggedIn={isLoggedIn}
+                onUpdateArticles={handleUpdateArticles}
+              />
+            )}
+
             {currentTab === 'admin' && (
               isLoggedIn ? (
                 <DashboardSection
@@ -376,7 +388,7 @@ export default function App() {
           {/* Core Footer Section */}
           <footer className="mt-12 pt-6 border-t border-stone-300 text-center font-mono text-xs text-stone-705 select-none">
             <p className="mt-2 text-[11px] text-stone-500 tracking-wider">
-              &copy; 2026 THEroadMap News
+              &copy; 2026 TheRoadMapNews
             </p>
           </footer>
 
@@ -472,7 +484,7 @@ export default function App() {
       {/* HOVERING WHATSAPP ICON */}
       <a
         id="whatsapp-hover-button"
-        href="https://wa.me/2348164871518"
+        href="https://wa.me/2348028003034"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer"

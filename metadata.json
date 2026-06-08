@@ -1,5 +1,5 @@
 {
-  "name": "THEROADMAPNEWS",
+  "name": "RoadMap News",
   "description": "A premier high-fidelity digital newspaper website inspired by Punch Newspaper, complete with a secure CMS Admin Dashboard, real-time live score updates, scholarship trackers, stock tickers, and multi-category news curation styled with Poppins typography.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

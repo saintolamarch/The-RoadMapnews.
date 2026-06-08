@@ -80,7 +80,7 @@ export default function AdvertPanel({ activeTheme = 'editorial' }: AdvertPanelPr
         </p>
         <div className={`p-1.5 rounded-lg text-center ${isCyber ? 'bg-red-950/50' : 'bg-red-900'}`}>
           <span className="font-mono text-[9px] text-red-200 font-bold">
-            PROMO CODE: FLYCHRONICLE2026
+            PROMO CODE: FLYROADMAP2026
           </span>
         </div>
       </div>

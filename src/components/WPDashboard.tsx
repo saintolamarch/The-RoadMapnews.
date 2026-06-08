@@ -162,7 +162,7 @@ export default function WPDashboard({
         <div className="flex items-center gap-3">
           <div className="bg-[#ea1c24] text-white p-1 rounded font-black text-xs flex items-center justify-center gap-1">
             <span className="font-serif">W</span>
-            <span className="font-sans text-[10px] tracking-tight">CHRONICLE</span>
+            <span className="font-sans text-[10px] tracking-tight">ROADMAP</span>
           </div>
           <span className="text-stone-400 font-mono text-[11px]">|</span>
           <div className="hidden sm:flex items-center gap-2.5 text-xs">
@@ -203,7 +203,7 @@ export default function WPDashboard({
             </div>
             <div>
               <div className="font-bold text-white text-xs leading-none">Press admin</div>
-              <span className="text-[9.5px] text-stone-400 font-mono">editor@daily-chronicle.ng</span>
+              <span className="text-[9.5px] text-stone-400 font-mono">editor@roadmap-news.ng</span>
             </div>
           </div>
 
@@ -290,7 +290,7 @@ export default function WPDashboard({
               {/* Header */}
               <div>
                 <h1 className="text-xl sm:text-2xl font-serif font-black text-stone-900">Dashboard</h1>
-                <p className="text-xs text-stone-500">Welcome to your Nigerian Daily Chronicle administrative press center.</p>
+                <p className="text-xs text-stone-500">Welcome to your The RoadMap News administrative press center.</p>
               </div>
 
               {/* Grid Widgets */}
